@@ -38,11 +38,3 @@ app.get('/api/time/:station', function(req, res) {
 });
 
 app.listen(port);
-
-/*
-*  SOME QUICK NOTES
-*  
-*  Caltrain routes: http://services.my511.org/Transit2.0/GetRoutesForAgency.aspx?agencyName=Caltrain&token=5e58e873-398c-4408-87f4-d58b19136466
-*  Stops (NB): http://services.my511.org/Transit2.0/GetStopsForRoute.aspx?routeIDF=Caltrain~LOCAL~NB&token=5e58e873-398c-4408-87f4-d58b19136466
-*  Stops (SB): http://services.my511.org/Transit2.0/GetStopsForRoute.aspx?routeIDF=Caltrain~LOCAL~SB1&token=5e58e873-398c-4408-87f4-d58b19136466
-*/
