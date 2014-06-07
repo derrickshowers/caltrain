@@ -8,9 +8,9 @@ I also want to pull in Twitter data so that you can see if there's anything craz
 
 Yes, you can see my API token. But I don't really care. [511.org's documentation](http://511.org/docs/RTT%20API%20V2.0%20Reference.pdf)
 
-*Routes:* http://services.my511.org/Transit2.0/GetRoutesForAgency.aspx?agencyName=Caltrain&token=5e58e873-398c-4408-87f4-d58b19136466  
-*Stops (NB):* http://services.my511.org/Transit2.0/GetStopsForRoute.aspx?routeIDF=Caltrain~LOCAL~NB&token=5e58e873-398c-4408-87f4-d58b19136466  
-*Stops (SB):* http://services.my511.org/Transit2.0/GetStopsForRoute.aspx?routeIDF=Caltrain~LOCAL~SB1&token=5e58e873-398c-4408-87f4-d58b19136466  
+**Routes:** http://services.my511.org/Transit2.0/GetRoutesForAgency.aspx?agencyName=Caltrain&token=5e58e873-398c-4408-87f4-d58b19136466  
+**Stops (NB):** http://services.my511.org/Transit2.0/GetStopsForRoute.aspx?routeIDF=Caltrain~LOCAL~NB&token=5e58e873-398c-4408-87f4-d58b19136466  
+**Stops (SB):** http://services.my511.org/Transit2.0/GetStopsForRoute.aspx?routeIDF=Caltrain~LOCAL~SB1&token=5e58e873-398c-4408-87f4-d58b19136466  
 
 ### List of Stops
 
