@@ -1,41 +1,22 @@
-/* fonts */
+/*
+*  Defaults
+*/
 body {
-	font-family: 'Muli', sans-serif;
-}
-button.btn {
-	font-size: .75em;
+	font-family: 'Oswald', sans-serif;
+	color: $mainTextColor;
 }
 
-/* helpers */
-.clearfix:before,
-.clearfix:after {
-	content: "";
-	display: table;
+/*
+*  Helpers - classes that fix things anywhere and everywhere
+*/
+
+/* clearfix */
+.cf:before,
+.cf:after {
+	content: " "; /* 1 */
+	display: table; /* 2 */
 }
-.clearfix:after {
+
+.cf:after {
 	clear: both;
-}
-.darkBox {
-	background-color: #333;
-	color: #FAFAFA;
-}
-.roundCorners {
-	border-radius: 4px;
-}
-.hideText {
-	text-indent: -9999px;
-}
-.cutInHalf {
-	width: 45%;
-}
-
-/* browser outdated message */
-.browsehappy {
-	height: 100%; width: 100%;
-	position: absolute;
-	z-index: 1000;
-	background-color: #1C3664;
-	padding-top: 100px;
-	color: #FFF;
-	text-align: center;
 }

@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Muli:300,400,300italic,400italic);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -46,42 +46,39 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* fonts */
+/*
+*  Defaults
+*/
 body {
-  font-family: 'Muli', sans-serif; }
+  font-family: 'Oswald', sans-serif;
+  color: #333333; }
 
-button.btn {
-  font-size: .75em; }
+/*
+*  Helpers - classes that fix things anywhere and everywhere
+*/
+/* clearfix */
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
 
-/* helpers */
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  display: table; }
-
-.clearfix:after {
+.cf:after {
   clear: both; }
 
-.darkBox {
-  background-color: #333;
-  color: #FAFAFA; }
+#page-header {
+  width: 60%;
+  margin: 10px auto 0; }
+  #page-header img {
+    max-width: 25%;
+    float: left; }
+  #page-header h1 {
+    float: right;
+    line-height: 27px;
+    text-transform: uppercase; }
 
-.roundCorners {
-  border-radius: 4px; }
-
-.hideText {
-  text-indent: -9999px; }
-
-.cutInHalf {
-  width: 45%; }
-
-/* browser outdated message */
-.browsehappy {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: 1000;
-  background-color: #1C3664;
-  padding-top: 100px;
-  color: #FFF;
-  text-align: center; }
+#search-stop {
+  height: 100px;
+  margin: 10px 0;
+  background-color: #dc3c41; }

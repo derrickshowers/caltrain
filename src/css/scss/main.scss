@@ -2,7 +2,10 @@
 @import "partials/reset";
 
 // Fonts
-@import url(http://fonts.googleapis.com/css?family=Muli:300,400,300italic,400italic);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+// Settings
+@import "settings/colors";
 
 // Main Styles
 @import "partials/base";
