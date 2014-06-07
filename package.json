@@ -4,7 +4,7 @@
   "description": "web app to show the next departing train for the chosen station",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch-sass" : "sass --watch src/css/scss/main.scss:src/css/styles.css"
   },
   "author": "Derrick Showers",
   "license": "BSD-2-Clause",
