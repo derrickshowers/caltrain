@@ -79,6 +79,30 @@ body {
     text-transform: uppercase; }
 
 #search-stop {
-  height: 100px;
   margin: 10px 0;
-  background-color: #dc3c41; }
+  background-color: #dc3c41;
+  text-align: center;
+  position: relative; }
+  #search-stop #search {
+    width: 75%;
+    margin: 20px 0;
+    font-size: 16px;
+    line-height: 25px;
+    color: #FFF;
+    text-align: center;
+    border: none;
+    border-bottom: 1px #FFF solid;
+    background: none; }
+    #search-stop #search::-webkit-input-placeholder {
+      color: #FFF; }
+  #search-stop span {
+    display: none; }
+
+.ui-autocomplete {
+  width: 75%;
+  background-color: #FFF;
+  opacity: .9;
+  color: #dc3c41;
+  font-weight: 100; }
+  .ui-autocomplete li a {
+    line-height: 30px; }

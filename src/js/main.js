@@ -42,6 +42,9 @@
   }
 
   // init
-  getTimes('70012');
+  $('#search').autocomplete({
+    source: ['San Jose', 'Mountain View', 'San Francisco']
+  });
+  //getTimes('70012');
 
 })(jQuery);

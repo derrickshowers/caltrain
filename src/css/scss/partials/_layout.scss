@@ -13,7 +13,43 @@
 }
 
 #search-stop {
-  height: 100px;
   margin: 10px 0;
   background-color: $caltrainRed;
+  text-align: center;
+  position: relative;
+
+  #search {
+    width: 75%;
+    margin: 20px 0;
+    font-size: 16px;
+    line-height: 25px;
+    color: #FFF;
+    text-align: center;
+    border: none;
+    border-bottom: 1px #FFF solid;
+    background: none;
+
+    &::-webkit-input-placeholder {
+      color: #FFF;
+    }
+  }
+
+  span {
+    display: none;
+  }
+
+}
+
+.ui-autocomplete {
+  width: 75%;
+  background-color: #FFF;
+  opacity: .9;
+  color: $caltrainRed;
+  font-weight: 100;
+
+  li {
+    a {
+      line-height: 30px;
+    }
+  }
 }
