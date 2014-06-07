@@ -1,4 +1,4 @@
-# Caltrain Real Departures
+# Caltrain Real Time Departures
 
 Idea right now is to create an app that provides real time departure information for Caltrain by stop. So, if you're at Mountain View, and want to know when the next train is coming - and most importantly - if it's late, you can pull up this app. This won't replace Caltrain schedule apps, just something to use as you're on your way to the station to see if you have to run, or can walk at a leisurely pace.
 
