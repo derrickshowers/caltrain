@@ -1,0 +1,14 @@
+{
+  "name": "caltraindepartures",
+  "version": "0.0.1",
+  "description": "web app to show the next departing train for the chosen station",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Derrick Showers",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "~4.1.0"
+  }
+}
