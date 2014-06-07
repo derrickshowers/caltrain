@@ -1,5 +1,6 @@
 var express = require('express'),
-    http = require('http');
+    http = require('http'),
+    parseString = require('xml2js').parseString,
     app = express();
 
 // app setup
@@ -12,7 +13,7 @@ var token = '&token=5e58e873-398c-4408-87f4-d58b19136466';
 // routes
 app.use(express.static(__dirname + '/src'));
 
-app.get('/api/time/:station', function(req, res) {
+app.get('/api/times/:station', function(req, res) {
   var station = req.params.station;
   var options = {
     hostname: domain,
@@ -27,7 +28,10 @@ app.get('/api/time/:station', function(req, res) {
     });
 
     serviceRes.on('end', function () {
-      res.send(data);
+      parseString(data, function(err, dataString) {
+        res.set('Content-Type', 'application/json');
+        res.send(JSON.stringify(dataString));
+      })
     });
   })
   .on('error', function(e){
