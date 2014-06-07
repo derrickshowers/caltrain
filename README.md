@@ -14,7 +14,7 @@ Yes, you can see my API token. But I don't really care - have fun with it! [511.
 
 ### List of Stops
 
-*Southbound:*
+**Southbound:**
 San Francisco Caltrain Station" - 70012
 22nd Street Caltrain Station" - 70022
 Bayshore Caltrain Station" - 70032
@@ -38,7 +38,7 @@ Lawrence Caltrain Station" - 70232
 Santa Clara Caltrain Station" - 70242
 San Jose Diridon Caltrain Station" - 70262
 
-*Northbound:*
+**Northbound:**
 San Francisco Caltrain Station" - 70012
 22nd Street Caltrain Station" - 70022
 Bayshore Caltrain Station" - 70032
