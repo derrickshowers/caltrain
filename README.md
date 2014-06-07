@@ -6,7 +6,7 @@ I also want to pull in Twitter data so that you can see if there's anything craz
 
 ## 511 API
 
-Yes, you can see my API token. But I don't really care - have fun with it!
+Yes, you can see my API token. But I don't really care - have fun with it! [511.org's documentation](http://511.org/docs/RTT%20API%20V2.0%20Reference.pdf)
 
 *Routes:* http://services.my511.org/Transit2.0/GetRoutesForAgency.aspx?agencyName=Caltrain&token=5e58e873-398c-4408-87f4-d58b19136466
 *Stops (NB):* http://services.my511.org/Transit2.0/GetStopsForRoute.aspx?routeIDF=Caltrain~LOCAL~NB&token=5e58e873-398c-4408-87f4-d58b19136466
@@ -66,3 +66,7 @@ San Jose Diridon Caltrain Station" - 70262
 ## Series of Events
 
 Wanted to do this entire on the front end, without creating my own API in node, but that's not possible since 511.org doesn't allow cross domain AJAX requests. I guess this will be cleaner in the log end - I'll be able to convert the XML to JSON server side (since 511.org only provides their response in XML - awesome!).
+
+API done. Very simple - just takes a station param (which is the stopCode on 511.org's documentation), grabs the XML, and translates that into JSON using [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js) and JSON.stringify().
+
+JS on the front end gets the departure info from the API and then parses the JSON to get the necessary info. Appends that to the DOM.
