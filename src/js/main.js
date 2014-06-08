@@ -2,95 +2,116 @@
   'use strict';
 
   var settings = {
-    resultsArea: document.getElementById('results'),
     stopCodes: [
       {
         stopName: 'San Francisco 4th & King',
-        stopCode: '70012'
+        stopCodeNB: '70011',
+        stopCodeSB: '70012'
       },
       {
         stopName: '22nd Street',
-        stopCode: '70022'
+        stopCodeNB: '70021',
+        stopCodeSB: '70022'
       },
       {
         stopName: 'Bayshore',
-        stopCode: '70032'
+        stopCodeNB: '70031',
+        stopCodeSB: '70032'
       },
       {
         stopName: 'Southern San Francisco',
-        stopCode: '70042'
+        stopCodeNB: '70041',
+        stopCodeSB: '70042'
       },
       {
         stopName: 'San Bruno',
-        stopCode: '70052'
+        stopCodeNB: '70051',
+        stopCodeSB: '70052'
       },
       {
         stopName: 'Millbrae',
-        stopCode: '70062'
+        stopCodeNB: '70061',
+        stopCodeSB: '70062'
       },
       {
         stopName: 'Burlingame',
-        stopCode: '70082'
+        stopCodeNB: '70081',
+        stopCodeSB: '70082'
       },
       {
         stopName: 'San Mateo',
-        stopCode: '70092'
+        stopCodeNB: '70091',
+        stopCodeSB: '70092'
       },
       {
         stopName: 'Hayward Park',
-        stopCode: '70102'
+        stopCodeNB: '70101',
+        stopCodeSB: '70102'
       },
       {
         stopName: 'Hillsdale',
-        stopCode: '70112'
+        stopCodeNB: '70111',
+        stopCodeSB: '70112'
       },
       {
         stopName: 'Belmont',
-        stopCode: '70122'
+        stopCodeNB: '70121',
+        stopCodeSB: '70122'
       },
       {
         stopName: 'San Carlos',
-        stopCode: '70132'
+        stopCodeNB: '70131',
+        stopCodeSB: '70132'
       },
       {
         stopName: 'Redwood City',
-        stopCode: '70142'
+        stopCodeNB: '70141',
+        stopCodeSB: '70142'
       },
       {
         stopName: 'Menlo Park',
-        stopCode: '70162'
+        stopCodeNB: '70161',
+        stopCodeSB: '70162'
       },
       {
         stopName: 'Palo Alto',
-        stopCode: '70172'
+        stopCodeNB: '70171',
+        stopCodeSB: '70172'
       },
       {
         stopName: 'California Avenue',
-        stopCode: '70192'
+        stopCodeNB: '70191',
+        stopCodeSB: '70192'
       },
       {
         stopName: 'San Antonio',
-        stopCode: '70202'
+        stopCodeNB: '70201',
+        stopCodeSB: '70202'
       },
       {
         stopName: 'Mountain View',
-        stopCode: '70212'
+        stopCodeNB: '70211',
+        stopCodeSB: '70212'
       },
       {
         stopName: 'Sunnyvale',
-        stopCode: '70222'
+        stopCodeNB: '70221',
+        stopCodeSB: '70222'
       },
       {
         stopName: 'Lawrence',
-        stopCode: '70232'
+        stopCodeNB: '70231',
+        stopCodeSB: '70232'
       },
       {
         stopName: 'Santa Calra',
-        stopCode: '70242'
+        stopCodeNB: '70241',
+        stopCodeSB: '70242'
       },
       {
         stopName: 'San Jose Diridon',
-        stopCode: '70262'
+        stopCodeNB: '70261',
+        stopCodeSB: '70262'
       }
     ]
   }
@@ -98,16 +119,39 @@
   function appendTime(routeType, routeDirection, nextTime) {
     var li,
         textNode,
-        ul = document.createElement('ul');
+        resultsArea = document.getElementById('results');
 
-    for (var i = 0; i < arguments.length; i++) {
-      li = document.createElement('li');
-      textNode = document.createTextNode(arguments[i]);
-      li.appendChild(textNode);
-      ul.appendChild(li);
+    // create heading if it doesn't exist
+    if ($('.heading').length < 1) {
+      appendLI('type', 'heading');
+      appendLI('route', 'heading');
+      appendLI('time', 'heading');
     }
 
-    settings.resultsArea.appendChild(ul);
+    // delete previous
+    $('.timeInfo').remove();
+
+    if (arguments.length > 1) {
+      for (var i = 0; i < arguments.length; i++) {
+        appendLI(arguments[i]);
+      }
+    } else {
+      appendLI('no more trains', 'error');
+    }
+
+    function appendLI (text, type) {
+      li = document.createElement('li');
+      textNode = document.createTextNode(text);
+      li.appendChild(textNode);
+      if (type === 'error') {
+        li.className = 'timeInfo error'
+      } else if (type === 'heading') {
+        li.className = 'heading'
+      } else {
+        li.className = 'timeInfo';
+      }
+      resultsArea.appendChild(li);
+    }
   }
 
   function getTimes(stopCode) {
@@ -115,6 +159,7 @@
       var routeType,
           routeDirection,
           nextTime,
+          noTrain = true,
           cleanData = data.RTT.AgencyList[0].Agency[0].RouteList[0].Route;
 
       for (var i = 0; i < cleanData.length; i++) {
@@ -123,21 +168,35 @@
           routeDirection = cleanData[i].RouteDirectionList[0].RouteDirection[i2].$.Name;
           nextTime = cleanData[i].RouteDirectionList[0].RouteDirection[i2].StopList[0].Stop[0].DepartureTimeList[0].DepartureTime;
           if (nextTime !== undefined) {
-            nextTime = nextTime[0];
+            nextTime = nextTime[0] + ' mins';
             appendTime(routeType, routeDirection, nextTime);
+            noTrain = false;
           }
         }
       }
+
+      if (noTrain) {
+        appendTime(false);
+      }
+
     });
   }
 
   function findStopCode(stopName, direction) {
     for (var i = 0; i < settings.stopCodes.length; i++) {
       if (settings.stopCodes[i].stopName === stopName) {
-        return settings.stopCodes[i].stopCode;
+        return (direction === 'north') ? settings.stopCodes[i].stopCodeNB : settings.stopCodes[i].stopCodeSB;
       }
     }
     return null;
+  }
+
+  function validateSubmit() {
+    var direction = $('.direction.selected').attr('id');
+    var stopCode = findStopCode(document.getElementById('search').value, direction);
+    if (stopCode !== '' && direction !== '') {
+      getTimes(stopCode, direction);
+    }
   }
 
   // init
@@ -149,6 +208,7 @@
       }
     })
     $(this).addClass('selected');
+    validateSubmit();
   })
 
   $('#search').autocomplete({
@@ -176,8 +236,10 @@
       'Santa Calra',
       'San Jose Diridon'
     ],
-    change: function() {
-      getTimes(findStopCode($(this).val()));
+    close: function() {
+      $('.direction').each(function() {
+        $(this).removeClass('selected');
+      });
     }
   });
 

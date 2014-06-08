@@ -71,3 +71,37 @@
     }
   }
 }
+
+#results {
+  width: 90%;
+  margin: 20px auto;
+  li {
+    float: left;
+    text-transform: lowercase;
+    font-size: 14px;
+    font-weight: 100;
+
+    &.heading {
+      margin-bottom: 10px;
+      text-transform: uppercase;
+
+      font-weight: 400;
+    }
+
+    &:nth-child(3n + 1) {
+      width: 30%;
+      clear: left;
+    }
+    &:nth-child(3n + 2) {
+      width: 50%;
+    }
+    &:nth-child(3n + 3) {
+      width: 20%;
+      text-align: right;
+    }
+
+    &.error {
+      width: 100%;
+    }
+  }
+}

@@ -121,3 +121,26 @@ body {
     text-align: center; }
     .ui-autocomplete li a {
       line-height: 30px; }
+
+#results {
+  width: 90%;
+  margin: 20px auto; }
+  #results li {
+    float: left;
+    text-transform: lowercase;
+    font-size: 14px;
+    font-weight: 100; }
+    #results li.heading {
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-weight: 400; }
+    #results li:nth-child(3n + 1) {
+      width: 30%;
+      clear: left; }
+    #results li:nth-child(3n + 2) {
+      width: 50%; }
+    #results li:nth-child(3n + 3) {
+      width: 20%;
+      text-align: right; }
+    #results li.error {
+      width: 100%; }
