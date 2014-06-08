@@ -144,3 +144,8 @@ body {
       text-align: right; }
     #results li.error {
       width: 100%; }
+
+#twitter-heading {
+  color: #dc3c41;
+  margin-bottom: 20px;
+  text-align: center; }
