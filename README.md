@@ -39,28 +39,28 @@ Santa Clara Caltrain Station - 70242
 San Jose Diridon Caltrain Station - 70262  
 
 **Northbound:**  
-San Francisco Caltrain Station - 70012  
-22nd Street Caltrain Station - 70022  
-Bayshore Caltrain Station - 70032  
-So San Francisco Caltrain Station - 70042  
-San Bruno Caltrain Station - 70052  
-Millbrae Caltrain Station - 70062  
-Burlingame Caltrain Station - 70082  
-San Mateo Caltrain Station - 70092  
-Hayward Park Caltrain Station - 70102  
-Hillsdale Caltrain Station - 70112  
-Belmont Caltrain Station - 70122  
-San Carlos Caltrain Station - 70132  
-Redwood City Caltrain Station - 70142  
-Menlo Park Caltrain Station - 70162  
-Palo Alto Caltrain Station - 70172  
-California Ave Caltrain Station - 70192  
-San Antonio Caltrain Station - 70202  
-Mountain View Caltrain Station - 70212  
-Sunnyvale Caltrain Station - 70222  
-Lawrence Caltrain Station - 70232  
-Santa Clara Caltrain Station - 70242  
-San Jose Diridon Caltrain Station - 70262  
+San Francisco Caltrain Station - 70011  
+22nd Street Caltrain Station - 70021  
+Bayshore Caltrain Station - 70031  
+So San Francisco Caltrain Station - 70041  
+San Bruno Caltrain Station - 70051  
+Millbrae Caltrain Station - 70061  
+Burlingame Caltrain Station - 70081  
+San Mateo Caltrain Station - 70091  
+Hayward Park Caltrain Station - 70101  
+Hillsdale Caltrain Station - 70111  
+Belmont Caltrain Station - 70121  
+San Carlos Caltrain Station - 70131  
+Redwood City Caltrain Station - 70141  
+Menlo Park Caltrain Station - 70161  
+Palo Alto Caltrain Station - 70171  
+California Ave Caltrain Station - 70191  
+San Antonio Caltrain Station - 70201  
+Mountain View Caltrain Station - 70211  
+Sunnyvale Caltrain Station - 70221  
+Lawrence Caltrain Station - 70231  
+Santa Clara Caltrain Station - 70241  
+San Jose Diridon Caltrain Station - 70261  
 
 
 ## Series of Events
