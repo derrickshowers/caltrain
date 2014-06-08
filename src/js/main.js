@@ -104,7 +104,7 @@
         stopCodeSB: '70232'
       },
       {
-        stopName: 'Santa Calra',
+        stopName: 'Santa Clara',
         stopCodeNB: '70241',
         stopCodeSB: '70242'
       },
@@ -140,7 +140,7 @@
         appendLI(arguments[i]);
       }
     } else {
-      appendLI('no more trains', 'error');
+      appendLI(arguments[0], 'error');
     }
 
     function appendLI (text, type) {
@@ -185,7 +185,7 @@
       }
 
       if (noTrain) {
-        appendTime(false);
+        appendTime('no more trians');
       }
 
     });
@@ -213,8 +213,10 @@
   function validateSubmit() {
     var direction = $('.direction.selected').attr('id');
     var stopCode = findStopCode(document.getElementById('search').value, direction);
-    if (stopCode !== '' && direction !== '') {
+    if (stopCode !== '' && stopCode !== null && direction !== '') {
       getTimes(stopCode, direction);
+    } else if (stopCode === null) {
+      appendTime('are you sure you typed the station correctly?')
     }
   }
 
@@ -260,7 +262,7 @@
         'Mountain View',
         'Sunnyvale',
         'Lawrence',
-        'Santa Calra',
+        'Santa Clara',
         'San Jose Diridon'
       ],
       close: function() {
