@@ -34,6 +34,23 @@
     }
   }
 
+  button {
+    padding: 10px;
+    margin: 0 10px 20px;
+    background: none;
+    border: 1px #FFF solid;
+    border-radius: 5px;
+    color: #FFF;
+    font: inherit;
+    font-weight: 100;
+    font-size: 12px;
+
+    &.selected {
+      background-color: #FFF;
+      color: $caltrainRed;
+    }
+  }
+
   span {
     display: none;
   }
