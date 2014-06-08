@@ -116,6 +116,10 @@
     ]
   }
 
+  /**
+   * appends stuff to the DOM
+   * @return none
+   */
   function appendTime(routeType, routeDirection, nextTime) {
     var li,
         textNode,
@@ -154,6 +158,11 @@
     }
   }
 
+  /**
+   * does the AJAX call to get the goods
+   * @param {string} stopCode numerical code that ids stop
+   * @return none
+   */
   function getTimes(stopCode) {
     $.get('/api/times/' + stopCode, function(data) {
       var routeType,
@@ -182,6 +191,12 @@
     });
   }
 
+  /**
+   * get the stop code
+   * @param {string} stopName the name of the stop
+   * @param {string} direction north or south, assumed south if nothing is passed
+   * @return {string or null} the stop code id, or null if nothing matches
+   */
   function findStopCode(stopName, direction) {
     for (var i = 0; i < settings.stopCodes.length; i++) {
       if (settings.stopCodes[i].stopName === stopName) {
@@ -191,6 +206,10 @@
     return null;
   }
 
+  /**
+   * eventually this will validate and such. right now it's just a way to
+   * modularize the code a bit.
+   */
   function validateSubmit() {
     var direction = $('.direction.selected').attr('id');
     var stopCode = findStopCode(document.getElementById('search').value, direction);
@@ -199,48 +218,61 @@
     }
   }
 
-  // init
-  $('.direction').on('click', function() {
-    var $this = $(this);
-    $('.direction').each(function() {
-      if ($this !== $(this)) {
-        $(this).removeClass('selected')
-      }
-    })
-    $(this).addClass('selected');
-    validateSubmit();
-  })
+  /**
+   * does just what you'd think it does
+   * no return, no parmas, just init
+   */
+  function init() {
 
-  $('#search').autocomplete({
-    source: [
-      'San Francisco 4th & King',
-      '22nd Street',
-      'Bayshore',
-      'Southern San Francisco',
-      'San Bruno',
-      'Millbrae',
-      'Burlingame',
-      'San Mateo',
-      'Hayward Park',
-      'Hillsdale',
-      'Belmont',
-      'San Carlos',
-      'Redwood City',
-      'Menlo Park',
-      'Palo Alto',
-      'California Avenue',
-      'San Antonio',
-      'Mountain View',
-      'Sunnyvale',
-      'Lawrence',
-      'Santa Calra',
-      'San Jose Diridon'
-    ],
-    close: function() {
+    // click even handler for north/south buttons
+    $('.direction').on('click', function() {
+      var $this = $(this);
       $('.direction').each(function() {
-        $(this).removeClass('selected');
-      });
-    }
-  });
+        if ($this !== $(this)) {
+          $(this).removeClass('selected')
+        }
+      })
+      $(this).addClass('selected');
+      validateSubmit();
+    })
+
+    // TODO: See if we can use settings.stopCodes instead of this.
+    // For now, this is an array of stations for the autocomplete thinger.
+    $('#search').autocomplete({
+      source: [
+        'San Francisco 4th & King',
+        '22nd Street',
+        'Bayshore',
+        'Southern San Francisco',
+        'San Bruno',
+        'Millbrae',
+        'Burlingame',
+        'San Mateo',
+        'Hayward Park',
+        'Hillsdale',
+        'Belmont',
+        'San Carlos',
+        'Redwood City',
+        'Menlo Park',
+        'Palo Alto',
+        'California Avenue',
+        'San Antonio',
+        'Mountain View',
+        'Sunnyvale',
+        'Lawrence',
+        'Santa Calra',
+        'San Jose Diridon'
+      ],
+      close: function() {
+        // when autocomplete closes, remove selected state from north/south buttons
+        $('.direction').each(function() {
+          $(this).removeClass('selected');
+        });
+      }
+    });
+
+  }
+
+  init();
 
 })(jQuery);
