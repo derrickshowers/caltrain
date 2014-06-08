@@ -41,9 +41,46 @@
     });
   }
 
+  function findStopCode(stopName, direction) {
+
+  }
+
   // init
+  $('.direction').on('click', function() {
+    var $this = $(this);
+    $('.direction').each(function() {
+      if ($this !== $(this)) {
+        $(this).removeClass('selected')
+      }
+    })
+    $(this).addClass('selected');
+  })
+
   $('#search').autocomplete({
-    source: ['San Jose', 'Mountain View', 'San Francisco']
+    source: [
+      'San Francisco 4th & King',
+      '22nd Street',
+      'Bayshore',
+      'Southern San Francisco',
+      'San Bruno',
+      'Millbrae',
+      'Burlingame',
+      'San Mateo',
+      'Hayward Park',
+      'Hillsdale',
+      'Belmont',
+      'San Carlos',
+      'Redwood City',
+      'Menlo Park',
+      'Palo Alto',
+      'California Avenue',
+      'San Antonio',
+      'Mountain View',
+      'Sunnyvale',
+      'Lawrence',
+      'Santa Calra',
+      'San Jose Diridon'
+    ]
   });
   //getTimes('70012');
 
