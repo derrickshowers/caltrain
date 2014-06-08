@@ -2,7 +2,97 @@
   'use strict';
 
   var settings = {
-    resultsArea: document.getElementById('results')
+    resultsArea: document.getElementById('results'),
+    stopCodes: [
+      {
+        stopName: 'San Francisco 4th & King',
+        stopCode: '70012'
+      },
+      {
+        stopName: '22nd Street',
+        stopCode: '70022'
+      },
+      {
+        stopName: 'Bayshore',
+        stopCode: '70032'
+      },
+      {
+        stopName: 'Southern San Francisco',
+        stopCode: '70042'
+      },
+      {
+        stopName: 'San Bruno',
+        stopCode: '70052'
+      },
+      {
+        stopName: 'Millbrae',
+        stopCode: '70062'
+      },
+      {
+        stopName: 'Burlingame',
+        stopCode: '70082'
+      },
+      {
+        stopName: 'San Mateo',
+        stopCode: '70092'
+      },
+      {
+        stopName: 'Hayward Park',
+        stopCode: '70102'
+      },
+      {
+        stopName: 'Hillsdale',
+        stopCode: '70112'
+      },
+      {
+        stopName: 'Belmont',
+        stopCode: '70122'
+      },
+      {
+        stopName: 'San Carlos',
+        stopCode: '70132'
+      },
+      {
+        stopName: 'Redwood City',
+        stopCode: '70142'
+      },
+      {
+        stopName: 'Menlo Park',
+        stopCode: '70162'
+      },
+      {
+        stopName: 'Palo Alto',
+        stopCode: '70172'
+      },
+      {
+        stopName: 'California Avenue',
+        stopCode: '70192'
+      },
+      {
+        stopName: 'San Antonio',
+        stopCode: '70202'
+      },
+      {
+        stopName: 'Mountain View',
+        stopCode: '70212'
+      },
+      {
+        stopName: 'Sunnyvale',
+        stopCode: '70222'
+      },
+      {
+        stopName: 'Lawrence',
+        stopCode: '70232'
+      },
+      {
+        stopName: 'Santa Calra',
+        stopCode: '70242'
+      },
+      {
+        stopName: 'San Jose Diridon',
+        stopCode: '70262'
+      }
+    ]
   }
 
   function appendTime(routeType, routeDirection, nextTime) {
@@ -42,7 +132,12 @@
   }
 
   function findStopCode(stopName, direction) {
-
+    for (var i = 0; i < settings.stopCodes.length; i++) {
+      if (settings.stopCodes[i].stopName === stopName) {
+        return settings.stopCodes[i].stopCode;
+      }
+    }
+    return null;
   }
 
   // init
@@ -80,8 +175,10 @@
       'Lawrence',
       'Santa Calra',
       'San Jose Diridon'
-    ]
+    ],
+    change: function() {
+      getTimes(findStopCode($(this).val()));
+    }
   });
-  //getTimes('70012');
 
 })(jQuery);

@@ -117,5 +117,7 @@ body {
   opacity: .9;
   color: #dc3c41;
   font-weight: 100; }
-  .ui-autocomplete li a {
-    line-height: 30px; }
+  .ui-autocomplete li {
+    text-align: center; }
+    .ui-autocomplete li a {
+      line-height: 30px; }
