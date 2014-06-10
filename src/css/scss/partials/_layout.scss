@@ -107,12 +107,19 @@
 }
 
 #twitter-heading {
-  color: $caltrainRed;
-  margin-bottom: 20px;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  display: block;
+  background-color: $caltrainRed;
+  color: #FFF;
+  line-height: 50px;
   text-align: center;
 }
 
 .twitter-timeline {
+  bottom: 0;
   height: 0;
+  position: absolute;
   display: none;
 }
