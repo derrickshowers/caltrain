@@ -1,39 +1,56 @@
 (function($) {
   'use strict';
 
+  var settings = {
+    twitterSpeed: 300,
+    fadeSpeed: 1000
+  }
+
   var $twitterHeading = $('#twitter-heading'),
       deviceHeight = $(window).height(),
       headingHeight = $twitterHeading.height();
 
+  // function for twitter timeline animation
+  function animateTwitterTimeline(el, direction, bgColor) {
+
+    el.animate({
+      bottom: (direction === 'up') ? deviceHeight - headingHeight : 0,
+      'background-color': bgColor,
+    }, settings.twitterSpeed);
+    $('.twitter-timeline-rendered').animate({
+      height: (direction === 'up') ? deviceHeight - headingHeight : 0
+    }, settings.twitterSpeed);
+
+    return el.promise();
+
+  }
+
   // click handler
   $twitterHeading.on('click', function(e) {
     if ($twitterHeading.offset().top === 0) {
-      $(this).animate({
-        bottom: 0,
-        'background-color': '#DC3C41',
-      }, 300, function() {
+
+      var animationPromise = animateTwitterTimeline($(this), 'down', '#DC3C41');
+
+      // show return to twitter
+      animationPromise.done(function() {
         $(this).text('Return to Twitter');
         $(this).animate({
           color: '#FFF'
-        }, 1000);
-      });
-      $('.twitter-timeline-rendered').animate({
-        height: 0
-      }, 300);
+        }, settings.fadeSpeed);
+      })
+
     } else {
-      $(this).animate({
-        bottom: deviceHeight - headingHeight,
-        'background-color': '#FFF',
-      }, 300, function() {
+      
+      var animationPromise = animateTwitterTimeline($(this), 'up', '#FFF');
+
+      // show return text when done
+      animationPromise.done(function() {
         $(this).text('Touch to return');
         $(this).animate({
           color: '#DC3C41'
-        }, 1000);
-      });
-      $('.twitter-timeline-rendered').show();
-      $('.twitter-timeline-rendered').animate({
-        height: deviceHeight - headingHeight
-      }, 300);
+        }, settings.fadeSpeed);
+      })
+
     }
 
   });
