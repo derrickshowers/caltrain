@@ -1,0 +1,242 @@
+{
+    "RTT": {
+        "AgencyList": [
+            {
+                "Agency": [
+                    {
+                        "$": {
+                            "Name": "Caltrain",
+                            "HasDirection": "True",
+                            "Mode": "Rail"
+                        },
+                        "RouteList": [
+                            {
+                                "Route": [
+                                    {
+                                        "$": {
+                                            "Name": "BABY BULLET",
+                                            "Code": "BABY BULLET"
+                                        },
+                                        "RouteDirectionList": [
+                                            {
+                                                "RouteDirection": [
+                                                    {
+                                                        "$": {
+                                                            "Code": "SB2",
+                                                            "Name": "SOUTHBOUND TO TAMIEN"
+                                                        },
+                                                        "StopList": [
+                                                            {
+                                                                "Stop": [
+                                                                    {
+                                                                        "$": {
+                                                                            "name": "San Francisco Caltrain Station",
+                                                                            "StopCode": "70012"
+                                                                        },
+                                                                        "DepartureTimeList": [
+                                                                            ""
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "$": {
+                                                            "Code": "SB1",
+                                                            "Name": "SOUTHBOUND TO SAN JOSE DIRIDON"
+                                                        },
+                                                        "StopList": [
+                                                            {
+                                                                "Stop": [
+                                                                    {
+                                                                        "$": {
+                                                                            "name": "San Francisco Caltrain Station",
+                                                                            "StopCode": "70012"
+                                                                        },
+                                                                        "DepartureTimeList": [
+                                                                            {
+                                                                                "DepartureTime": [
+                                                                                    "2",
+                                                                                    "3"
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "$": {
+                                            "Name": "LIMITED",
+                                            "Code": "LIMITED"
+                                        },
+                                        "RouteDirectionList": [
+                                            {
+                                                "RouteDirection": [
+                                                    {
+                                                        "$": {
+                                                            "Code": "SB2",
+                                                            "Name": "SOUTHBOUND TO TAMIEN"
+                                                        },
+                                                        "StopList": [
+                                                            {
+                                                                "Stop": [
+                                                                    {
+                                                                        "$": {
+                                                                            "name": "San Francisco Caltrain Station",
+                                                                            "StopCode": "70012"
+                                                                        },
+                                                                        "DepartureTimeList": [
+                                                                            {
+                                                                                "DepartureTime": [
+                                                                                    "11",
+                                                                                    "12"
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "$": {
+                                                            "Code": "SB1",
+                                                            "Name": "SOUTHBOUND TO SAN JOSE DIRIDON"
+                                                        },
+                                                        "StopList": [
+                                                            {
+                                                                "Stop": [
+                                                                    {
+                                                                        "$": {
+                                                                            "name": "San Francisco Caltrain Station",
+                                                                            "StopCode": "70012"
+                                                                        },
+                                                                        "DepartureTimeList": [
+                                                                            ""
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "$": {
+                                                            "Code": "SB3",
+                                                            "Name": "SOUTHBOUND TO GILROY"
+                                                        },
+                                                        "StopList": [
+                                                            {
+                                                                "Stop": [
+                                                                    {
+                                                                        "$": {
+                                                                            "name": "San Francisco Caltrain Station",
+                                                                            "StopCode": "70012"
+                                                                        },
+                                                                        "DepartureTimeList": [
+                                                                            ""
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "$": {
+                                            "Name": "LOCAL",
+                                            "Code": "LOCAL"
+                                        },
+                                        "RouteDirectionList": [
+                                            {
+                                                "RouteDirection": [
+                                                    {
+                                                        "$": {
+                                                            "Code": "SB2",
+                                                            "Name": "SOUTHBOUND TO TAMIEN"
+                                                        },
+                                                        "StopList": [
+                                                            {
+                                                                "Stop": [
+                                                                    {
+                                                                        "$": {
+                                                                            "name": "San Francisco Caltrain Station",
+                                                                            "StopCode": "70012"
+                                                                        },
+                                                                        "DepartureTimeList": [
+                                                                            {
+                                                                                "DepartureTime": [
+                                                                                    "36",
+                                                                                    "37"
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "$": {
+                                                            "Code": "SB1",
+                                                            "Name": "SOUTHBOUND TO SAN JOSE DIRIDON"
+                                                        },
+                                                        "StopList": [
+                                                            {
+                                                                "Stop": [
+                                                                    {
+                                                                        "$": {
+                                                                            "name": "San Francisco Caltrain Station",
+                                                                            "StopCode": "70012"
+                                                                        },
+                                                                        "DepartureTimeList": [
+                                                                            ""
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "$": {
+                                                            "Code": "SB3",
+                                                            "Name": "SOUTHBOUND TO GILROY"
+                                                        },
+                                                        "StopList": [
+                                                            {
+                                                                "Stop": [
+                                                                    {
+                                                                        "$": {
+                                                                            "name": "San Francisco Caltrain Station",
+                                                                            "StopCode": "70012"
+                                                                        },
+                                                                        "DepartureTimeList": [
+                                                                            ""
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
