@@ -143,7 +143,7 @@
       appendLI(arguments[0], 'error');
     }
 
-    function appendLI (text, type) {
+    function appendLI(text, type) {
       li = document.createElement('li');
       textNode = document.createTextNode(text);
       li.appendChild(textNode);
