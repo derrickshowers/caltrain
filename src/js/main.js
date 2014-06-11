@@ -132,9 +132,6 @@
       appendLI('time', 'heading');
     }
 
-    // delete previous
-    $('.timeInfo').remove();
-
     if (arguments.length > 1) {
       for (var i = 0; i < arguments.length; i++) {
         appendLI(arguments[i]);
@@ -164,7 +161,10 @@
    * @return none
    */
   function getTimes(stopCode) {
-    $.get('/api/times/' + stopCode, function(data) {
+    var url = '/api/times/' + stopCode;
+    var debugUrl = '/js/mock.json';
+
+    $.get(url, function(data) {
       var routeType,
           routeDirection,
           nextTime,
@@ -173,6 +173,7 @@
 
       for (var i = 0; i < cleanData.length; i++) {
         routeType = cleanData[i].$.Name;
+        console.log(routeType);
         for (var i2 = 0; i2 < cleanData[i].RouteDirectionList[0].RouteDirection.length; i2++) {
           routeDirection = cleanData[i].RouteDirectionList[0].RouteDirection[i2].$.Name;
           nextTime = cleanData[i].RouteDirectionList[0].RouteDirection[i2].StopList[0].Stop[0].DepartureTimeList[0].DepartureTime;
@@ -213,6 +214,10 @@
   function validateSubmit() {
     var direction = $('.direction.selected').attr('id');
     var stopCode = findStopCode(document.getElementById('search').value, direction);
+    
+    // clear previous times
+    $('.timeInfo').remove();
+
     if (stopCode !== '' && stopCode !== null && direction !== '') {
       getTimes(stopCode, direction);
     } else if (stopCode === null) {

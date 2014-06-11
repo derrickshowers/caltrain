@@ -129,7 +129,8 @@ body {
     float: left;
     text-transform: lowercase;
     font-size: 14px;
-    font-weight: 100; }
+    font-weight: 100;
+    margin-bottom: 10px; }
     #results li.heading {
       margin-bottom: 10px;
       text-transform: uppercase;
