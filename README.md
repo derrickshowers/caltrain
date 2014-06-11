@@ -4,7 +4,7 @@ Idea right now is to create an app that provides real time departure information
 
 I also want to pull in Twitter data so that you can see if there's anything crazy going on right under the next time of departure.
 
-**_Update (6/9/2014):_ Looks like the data feed is down. This seems to happen a lot. [Started a thread](https://groups.google.com/forum/#!topic/511sfbaydeveloperresources/l76aiEnTa1k) in their Google Groups discussion.**
+~~**_Update (6/9/2014):_ Looks like the data feed is down. This seems to happen a lot. [Started a thread](https://groups.google.com/forum/#!topic/511sfbaydeveloperresources/l76aiEnTa1k) in their Google Groups discussion.**~~ Resolved
 
 ## 511 API
 
