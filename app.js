@@ -41,4 +41,30 @@ app.get('/api/times/:station', function(req, res) {
 
 });
 
+app.get('/api/times/:station/raw', function(req, res) {
+  var station = req.params.station;
+  var options = {
+    hostname: domain,
+    path: '/Transit2.0/GetNextDeparturesByStopCode.aspx?stopcode=' + station + token
+  };
+  
+  http.request(options, function(serviceRes) {
+    var data = '';
+
+    serviceRes.on('data', function (chunk) {
+      data += chunk;
+    });
+
+    serviceRes.on('end', function () {
+      res.set('Content-Type', 'text/xml');
+      res.send(data);
+    });
+  })
+  .on('error', function(e){
+    console.log("Error: " + e.message);
+  })
+  .end();
+
+});
+
 app.listen(port);
