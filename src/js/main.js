@@ -161,8 +161,20 @@
    * @return none
    */
   function getTimes(stopCode) {
-    var url = '/api/times/' + stopCode;
-    var debugUrl = '/js/mock.json';
+    var url = '';
+
+    // look for params in the url for debugging
+    var dataParam = window.location.search.split("data=")[1];
+    if (dataParam === 'raw') {
+      window.open('/api/times/' + stopCode + '/raw', '_blank');
+    }
+
+    // use mock json if data=mock passed as param
+    if (dataParam === 'mock') {
+      url = '/js/mock.json';
+    } else {
+      url = '/api/times/' + stopCode;
+    }
 
     $.get(url, function(data) {
       var routeType,
