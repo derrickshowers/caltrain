@@ -35,6 +35,7 @@
   }
 
   button {
+    width: 25%;
     padding: 10px;
     margin: 0 10px 20px;
     background: none;
@@ -72,8 +73,23 @@
   }
 }
 
+#introduction {
+  width: 90%;
+  max-width: 980px;
+  margin: 0 auto;
+  h3 {
+    margin: 20px 0;
+  }
+  p {
+    font-weight: 100;
+    margin: 10px 0;
+    line-height: 20px;
+  }
+}
+
 #results {
   width: 90%;
+  max-width: 980px;
   margin: 20px auto;
   li {
     float: left;
@@ -121,6 +137,7 @@
 .twitter-timeline {
   bottom: 0;
   height: 0;
+  width: 100% !important;
   position: absolute;
   display: none;
 }

@@ -125,6 +125,9 @@
         textNode,
         resultsArea = document.getElementById('results');
 
+    // remove intro if it's there
+    $('#introduction').remove();
+
     // create heading if it doesn't exist
     if ($('.heading').length < 1) {
       appendLI('type', 'heading');
