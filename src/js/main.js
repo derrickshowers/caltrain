@@ -201,7 +201,7 @@
       }
 
       if (noTrain) {
-        appendTime('no more trians');
+        appendTime('no more trains');
       }
 
     });
