@@ -176,7 +176,8 @@ a:hover {
   background-color: #dc3c41;
   color: #FFF;
   line-height: 50px;
-  text-align: center; }
+  text-align: center;
+  cursor: pointer; }
 
 .twitter-timeline {
   bottom: 0;
