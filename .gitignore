@@ -3,6 +3,7 @@ node_modules
 
 # sass stuff
 .sass-cache
+styles.css.map
 
 # osx stuff
 .DS_Store
