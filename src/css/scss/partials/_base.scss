@@ -5,6 +5,15 @@ body {
 	font-family: 'Oswald', sans-serif;
 	color: $mainTextColor;
 }
+strong {
+  font-weight: 500;
+}
+a {
+  color: $caltrainRed;
+}
+a:hover {
+  text-decoration: none;
+}
 
 /*
 *  Helpers - classes that fix things anywhere and everywhere
